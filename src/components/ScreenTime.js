@@ -1,9 +1,10 @@
 import React, { useState,useEffect } from 'react'
 
-export default function ScreenTime() {
+export default function ScreenTime({ setstarted, started }) {
 
-    const [secs, setsecs] = useState(60)
-    const [mins, setmins] = useState(60)
+    const [secs, setsecs] = useState(59)
+    const [mins, setmins] = useState(25)
+
 
     useEffect(() => {
         let interval = setInterval(() => {
@@ -30,10 +31,12 @@ export default function ScreenTime() {
 
     return (
         <div>
-            <h3>Your screen time is: </h3>
+            <p>Pomodoro: </p>
             <span id="screen-time">{mins+" : "+secs}</span>
             <br /><br />
-            <button>Start</button>
+            <button onClick={() =>{
+                setstarted(!started)
+            }}>Stop Pomodoro</button>
         </div>
     )
 }
