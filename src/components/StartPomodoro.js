@@ -8,7 +8,7 @@ export default function StartPomodoro({ setstarted, started }) {
 
     return (
         <div>
-            <h2>Start Pomodoro</h2>
+            <p>Start Pomodoro</p>
             <button onClick={handleClick}>Start Pomodoro</button>
         </div>
     )
